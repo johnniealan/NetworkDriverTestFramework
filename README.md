@@ -1,4 +1,4 @@
-# DeviceDriverTestFramework
+# NetworkDriverTestFramework
 Generic Method to test Network drivers like UART, USB, CAN, 
 
 
