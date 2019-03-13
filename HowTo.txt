@@ -1,0 +1,25 @@
+Stage 1: Compiling Framework
+============================
+a. Copy the Entire Folder in ubunutu machine where arm tool chain is configured
+b. Goto to the folder "DeviceDrvTstFW/mak"
+c. Issue "make all host=arm" to cross compile for arm platform. "make all" for i686 platform
+d. check in "DeviceDrvTstFW/bin" if "testFW" is created
+
+Stage 2: Compiling Test cases
+=============================
+a. All the test cases are present in the folder "DeviceDrvTstFW/testcases".
+b. The demo test cases are pre-compiled along with framework.
+c. To compile your device driver specific test cases, say for instance "High Speed ArcNET". Got to folder "DeviceDrvTstFW/testcases/hsArcNetTestCases".
+d. Issue "make all host=arm"
+e. The test cases will be compiled into "DeviceDrvTstFW/bin" as "masterHSArcnetTstCase.so" and "slaveHSArcnetTstCase.so" 
+
+Stage 3: Executing Test cases in Arm based system
+=================================================
+a. Copy "DeviceDrvTstFW/bin" folder to Router.
+b. Update the PATH variable to add this bin folder Example: If bin folder is copied to /home/root, then export PATH=/home/root/bin:${PATH}
+c. Execute testFW, with appropriate options.
+d. The results will be stored in bin and the debug file will be created in bin folder to store information for debugging.
+
+Troube shoot: 
+a. If the lines in the screen are not proper, select remote character support in putty to 'latin1'
+b. For better results use putty.
